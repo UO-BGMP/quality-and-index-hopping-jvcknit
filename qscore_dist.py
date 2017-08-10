@@ -84,7 +84,7 @@ stdev_array = np.std(all_qscores, axis=0)
 med_array = np.median(all_qscores, axis=0)
 # print(med_array)
 
-# ######################## Plot These Results ##########################
+# ######################## Plot The Distributions ##########################
 
 xdata = np.arange(0, read_length, 1)
 plt.figure()

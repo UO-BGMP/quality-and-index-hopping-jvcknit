@@ -30,8 +30,10 @@ import itertools
 
 # define working files
 
+# set min quality score
 min_qscore = 30
 
+# open some files
 R1 = 'R1.fastq'
 R2 = 'R2.fastq'
 R3 = 'R3.fastq'
@@ -110,6 +112,7 @@ with open(R1 ,'r') as r1,\
 
 					# make new directory for output files
 					try:
+						os.removedirs('Output')
 						os.mkdir('Output')
 						os.chdir('Output')
 					except:
@@ -150,10 +153,10 @@ with open(R1 ,'r') as r1,\
 						h3 = head[3]+ '_'+ str(pair[0]+ '_'+ pair[1])
 
 						ud1.write(
-							h1+'\n'+seq[0]+'\n'+plus[0]+'\n'+qline[0]+'\n'
+							h0+'\n'+seq[0]+'\n'+plus[0]+'\n'+qline[0]+'\n'
 							)
 						ud2.write(
-							h4+'\n'+seq[3]+'\n'+plus[3]+'\n'+qline[3]+'\n'
+							h3+'\n'+seq[3]+'\n'+plus[3]+'\n'+qline[3]+'\n'
 							)
 						# close undetermined files
 						ud1.close()
@@ -167,7 +170,6 @@ with open(R1 ,'r') as r1,\
 		NL += 1
 
 print(all_combinations_dict)
-
 
 # how many combinations were recorded
 total =  0

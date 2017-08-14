@@ -47,5 +47,9 @@ cd ~/index_hop/plots
 
 
 
+TO DO:
+
+* figure out why some files have indices below qscore
+* add eac
 
 

@@ -10,6 +10,17 @@ import gzip
 import os
 import itertools
 
+def complement(seq):
+    complement = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A', 'N':'N'}
+    bases = list(seq)
+    #bases.remove('\n')
+    bases = [complement[base] for base in bases]
+    return ''.join(bases)
+
+
+def reverse_complement(s):
+        return complement(s[::-1])
+
 def get_arguments():
     '''Define and return command line options.'''
     parser = argparse.ArgumentParser(prog='Index_hop2',
@@ -126,7 +137,7 @@ with open(R1 ,'r') as r1,\
 				if len(qlist) == len(j):
 
 					# identify that index pair
-					pair = seq[1],seq[2]
+					pair = seq[1],reverse_complement(seq[2])
 
 					# check if the index pair is a possible combination
 					if pair in all_combinations_dict:
@@ -136,6 +147,7 @@ with open(R1 ,'r') as r1,\
 
 		# increment line number
 		NL += 1
+
 
 # open a file to hold the matched index pair counts
 # and write a first line
@@ -151,14 +163,14 @@ swap.write('Swapped Index Pair\tCounts\n')
 # wite matched and swapped indecies to their respective files
 for comb in all_combinations_dict:
 	if comb[0]==comb[1]:
-		match.write(str(comb)+'\t'+
+		match.write(str(comb[0])+'_'+str(comb[1])+'\t'+
 			str(all_combinations_dict[comb])+'\n')
 	else:
-		swap.write(str(comb)+'\t'+str(all_combinations_dict[comb])+'\n')
+		swap.write(str(comb[0])+'_'+str(comb[1])+'\t'+str(all_combinations_dict[comb])+'\n')
 
 # how many combinations were recorded
 total =  0
 for comb in all_combinations_dict:
 	total += all_combinations_dict[comb]
 
-print('Total combinations: ', str(total))
+print(total)

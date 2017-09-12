@@ -34,16 +34,16 @@ cd ~/index_hop/plots
 
 # R1 plot
 
-![R1 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/plots/R1_dist.png)
+![R1 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/Plots/R1.fastq_dist1.png)
 
 # R2 plot
-![R2 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/plots/R2_dist.png)
+![R2 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/Plots/R2.fastq_dist1.png)
 
 # R3 plot
-![R3 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/plots/R3_dist.png)
+![R3 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/Plots/R3.fastq_dist1.png)
 
 # R4 plot
-![R4 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/plots/R4_dist.png)
+![R4 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/Plots/R4.fastq_dist1.png
 
 
 

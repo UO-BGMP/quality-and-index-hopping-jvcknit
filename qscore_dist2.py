@@ -3,19 +3,23 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import argparse
-import gzip
 import os
 from collections import Counter
 
 
 def get_arguments():
     '''Define and return command line options.'''
-    parser = argparse.ArgumentParser(prog='qscore_dist',
-        description= 'This program plots a distribution of quality scores over the base position of sequencing reads in a fastq file.')
+    parser = argparse.ArgumentParser(
+        prog='qscore_dist',
+        description='This program plots a distribution of quality\
+                      scores over the base position of sequencing reads\
+                      in a fastq file.')
 
-    parser.add_argument('-f', '--infile', help='specify input file (path)',
-                        required=True,
-                        type=argparse.FileType('rt', encoding='UTF-8 '))
+    parser.add_argument(
+        '-f', '--infile',
+        help='specify input file (path)',
+        required=True,
+        type=argparse.FileType('rt', encoding='UTF-8 '))
 
     return parser.parse_args()
 
@@ -26,13 +30,13 @@ def convert_phred(letter):
     score = ord(letter) - 33    # illumina 1.8 phred+33
     return score
 
+
 args = get_arguments()
 file = args.infile.name
 
 all_qscores = np.zeros(101)
 
 mean_readscores = Counter()
-
 
 
 with open(file, 'r') as fh:
@@ -50,7 +54,9 @@ with open(file, 'r') as fh:
             readscore = 0
             for base in line:
                 # an array of all the scores
-                all_qscores[base_pos] = ((int(convert_phred(base)) + all_qscores[base_pos]) / (count))
+                all_qscores[base_pos] =\
+                    ((int(convert_phred(base)) +
+                      all_qscores[base_pos]) / (count))
 
                 readscore += int(convert_phred(base))
                 read_avg = int(readscore//len(line))
@@ -71,17 +77,16 @@ except:
 
 
 # determine the quality score distribution across the read length
-xdata = np.arange(0, len(all_qscores[all_qscores>0]), 1)
+xdata = np.arange(0, len(all_qscores[all_qscores > 0]), 1)
 plt.figure()
-plt.bar(xdata, all_qscores[all_qscores>0], width = 0.5)
-print(all_qscores[all_qscores>0])
+plt.bar(xdata, all_qscores[all_qscores > 0], width=0.5)
+print(all_qscores[all_qscores > 0])
 
 # label the axes
 plt.title(str(file)+'\n'+'Mean quality score for each Base Position')
 plt.xlabel('Base Position')
 plt.ylabel('Mean Quality Score')
 plt.savefig(file+'_dist1.png')
-
 
 
 # determine the quality score distribution across reads
@@ -93,8 +98,9 @@ for key in mean_readscores:
 
 
 plt.figure()
-plt.bar(x, y, width = 0.5)
-plt.title(str(file)+'\n'+'Frequency of average quality scores over all reads')
+plt.bar(x, y, width=0.5)
+plt.title(str(file)+'\n' +
+          'Frequency of average quality scores over all reads')
 plt.xlabel('Avg QS/read')
 plt.ylabel('Frequency')
 plt.savefig(file+'_dist2.png')

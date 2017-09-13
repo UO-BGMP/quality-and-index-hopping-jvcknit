@@ -127,8 +127,12 @@ with open(R1 ,'r') as r1,\
 
 			for j in qline[1:2]:
 				qlist = []
+				qtotal = 0
 				for qual in j:
-					if (ord(qual) - 33)  >= min_qscore:
+					qtotal += ord(qual) - 33
+					qavg = qtotal/len(j)
+
+					if qavg >= min_qscore:
 						qlist.append(qual)
 						#print(qlist)
 

@@ -35,17 +35,28 @@ ml python3/3.6.1
 
 # R1 plot
 
-![R1 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/Plots/R1.fastq_dist1.png)
+![R1 Quality Score Distributuion](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/Plots/1294_S1_L008_R1_001.fastq_dist1.png)
+
+# R1 plot
+![R1 Quality Score distribution plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/Plots/1294_S1_L008_R1_001.fastq_dist2.png)
 
 # R2 plot
-![R2 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/Plots/R2.fastq_dist1.png)
+![R2 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/Plots/1294_S1_L008_R2_001.fastq_dist1.png)
+
+# R2 plot
+![R2 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/Plots/1294_S1_L008_R2_001.fastq_dist2.png)
 
 # R3 plot
-![R3 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/Plots/R3.fastq_dist1.png)
+![R3 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/Plots/1294_S1_L008_R3_001.fastq_dist1.png)
+
+# R3 plot
+![R3 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/Plots/1294_S1_L008_R3_001.fastq_dist2.png)
 
 # R4 plot
-![R4 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/Plots/R4.fastq_dist1.png
+![R4 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/Plots/1294_S1_L008_R4_001.fastq_dist1.png)
 
+# R4 plot
+![R4 plot](https://github.com/UO-BGMP/quality-and-index-hopping-jvcknit/blob/index_hop.working/Plots/1294_S1_L008_R4_001.fastq_dist2.png)
 
 
 

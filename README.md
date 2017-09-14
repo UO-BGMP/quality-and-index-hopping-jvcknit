@@ -86,6 +86,19 @@ ml matplotlib/2.0.1-Python-3.6.1
 -i indexes.txt -c 30
 ```
 
+To asses how qualiity score filtering affected the level of index hoping `index_hop2.py` was run on the files again wtih a q-score threshold of 35.
+
+The reults from the run produced the following results.
+
+
+To determine the number of reads containing "N's"
+
+$ for file in *.fastq; do cat $file | awk 'NR%4==2 {print $0}' | grep 'N' | wc -l ; done
+2602560
+3976613
+3328051
+3591851
+
 
 
 

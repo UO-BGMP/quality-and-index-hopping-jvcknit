@@ -162,10 +162,10 @@ with open(R1, 'r') as r1,\
 
 # make new directory for plot files
 try:
-    os.mkdir('Results')
-    os.chdir('Results')
+    os.mkdir('Results'+'_'+str(min_qscore))
+    os.chdir('Results'+'_'+str(min_qscore))
 except:
-    os.chdir('Results')
+    os.chdir('Results'+'_'+str(min_qscore))
 
 # open a file to hold the matched index pair counts
 # and write a first line

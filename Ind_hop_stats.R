@@ -1,0 +1,81 @@
+### Index hopping stats 
+
+library(stringr)
+
+
+# enter directory with results from quality cutoff 30
+setwd('/Users/JakeVanCampen/Documents/Bi622/Aug_7_2017/index_hop/Results_30')
+
+# read in matched indexes from cutoff of 30 
+match_30 <- read.delim('match_out.tsv', sep='\t', header = 1) 
+
+# read in swapped indexes from cutoff of 30
+swapped_30 <- read.delim('swapped_out.tsv', sep = '\t', header = 1) 
+
+# read in undetermined indexes from cutoff of 30
+undet_30 <- read.delim('undetermined_out.tsv', sep = '\t', header = 1) 
+
+
+# determine the total number of reads for cutoff 30 
+total_30 <- sum(match_30$Counts)+sum(swapped_30$Counts)+sum(undet_30$Counts)
+
+
+# determine the percent of swapped indexes for each pair
+swapped_30$percent_swapped_30 <- swapped_30$Counts/sum(swapped_30$Counts) * 100
+
+
+# plot the percent of swapped indexes vs. the index pairs
+plot(swapped_30$percent_swapped_30 ~ swapped_30$Swapped.Index.Pair, xaxt='n',
+     ylab = "Percent of swapped indexes",
+     xlab = "Index Pair")
+
+# This plot shows most swapping was at low percent, though some swapping oocured 
+# more frequently, which pairs were swapped the most? 
+
+highly_swapped_30 <- swapped_30[which(swapped_30$percent_swapped_30 > 1), ]
+
+print(highly_swapped_30)
+
+
+
+
+
+# enter directory with results from quality cutoff 35 
+setwd('/Users/JakeVanCampen/Documents/Bi622/Aug_7_2017/index_hop/Results_35')
+
+# read in matched indexes from cutoff of 35
+match_35 <- read.delim('match_out.tsv', sep = '\t', header = 1) 
+
+# read in swapped indexes from cutoff of 35
+swapped_35 <- read.delim('swapped_out.tsv', sep = '\t', header = 1) 
+
+# read in undetermined indexes from cutoff of 35
+undet_35 <- read.delim('undetermined_out.tsv', sep = '\t', header = 1) 
+
+# determine the total number of reads for cutoff 35 
+total_35 <- sum(match_35$Counts)+sum(swapped_35$Counts)+sum(undet_35$Counts)
+
+swapped_35$percent_swapped_35 <- swapped_35$Counts/sum(swapped_35$Counts) * 100
+
+plot(swapped_35$percent_swapped_35 ~ swapped_35$Swapped.Index.Pair, xaxt='n',
+     ylab = "Percent of swapped indexes",
+     xlab = "Index Pair")
+  
+# This plot shows most swapping was at low percent, though some swapping oocured 
+# more frequently, which pairs were swapped the most? 
+
+highly_swapped_35 <- swapped_35[which(swapped_35$percent_swapped_35 > 1), ]
+
+print(highly_swapped_35)
+
+
+
+
+
+
+
+
+
+
+
+
